@@ -1,6 +1,8 @@
 
 ## Configurar api endpoint
-src/app/shared/services/api-url.ts 
+```bash
+src/app/shared/services/api-url.ts
+```
 dentro de ese archivo se dita la constante API_URL
 
 ### Install Dependencies
