@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth-service';
 import { Competencia, CompetenciaPayload } from '../models/competencia';
+import { API_URL } from './api-url';
 
 @Injectable({
   providedIn: 'root',

@@ -1,1 +1,1 @@
-const API_URL = "https://liga-deportes-mpg3.onrender.com"
+export const API_URL = "https://liga-deportes-mpg3.onrender.com"

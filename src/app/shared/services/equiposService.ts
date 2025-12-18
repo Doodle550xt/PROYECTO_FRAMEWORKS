@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth-service';
 import { Equipo, EquipoPayload } from '../models/equipos';
+import { API_URL } from './api-url';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EquiposService {
-  private API_URL = 'https://liga-deportes-mpg3.onrender.com';
 
   constructor(private http: HttpClient, private authServices: AuthService) { }
 
