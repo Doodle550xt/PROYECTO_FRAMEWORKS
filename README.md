@@ -3,7 +3,7 @@
 ```bash
 src/app/shared/services/api-url.ts
 ```
-dentro de ese archivo se dita la constante API_URL
+dentro de ese archivo se edita la constante API_URL
 
 ### Install Dependencies
 
