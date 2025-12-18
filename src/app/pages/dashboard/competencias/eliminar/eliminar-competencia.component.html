@@ -1,0 +1,71 @@
+<div class="flex flex-col gap-4">
+
+  <app-component-card title="Eliminar competencia">
+    <div class="space-y-6">
+
+      <div>
+        <app-label for="equipoLocal">Equipo local</app-label>
+        <app-input-field
+          [value]="competencia?.equipoLocal?.nombre || ''"
+          type="text"
+          [disabled]="true"
+          [hidden]="!competencia">
+        </app-input-field>
+      </div>
+
+      <div>
+        <app-label for="equipoVisitante">Equipo visitante</app-label>
+        <app-input-field
+          [value]="competencia?.equipoVisitante?.nombre || ''"
+          type="text"
+          [disabled]="true"
+          [hidden]="!competencia">
+        </app-input-field>
+      </div>
+
+      <div>
+        <app-label for="fecha">Fecha del partido</app-label>
+        <app-input-field
+          [value]="competencia?.fecha || '--'"
+          type="datetime-local"
+          [disabled]="true"
+          [hidden]="!competencia">
+        </app-input-field>
+      </div>
+
+      <div>
+        <app-label for="golesLocal">Goles local</app-label>
+        <app-input-field
+          [value]="competencia?.golesLocal ?? 0"
+          type="number"
+          [disabled]="true"
+          [hidden]="!competencia">
+        </app-input-field>
+      </div>
+
+      <div>
+        <app-label for="golesVisitante">Goles visitante</app-label>
+        <app-input-field
+          [value]="competencia?.golesVisitante ?? 0"
+          type="number"
+          [disabled]="true"
+          [hidden]="!competencia">
+        </app-input-field>
+      </div>
+
+    </div>
+  </app-component-card>
+
+  <app-component-card title="Acciones">
+    <div class="flex items-center gap-5">
+      <app-button (click)="eliminar()" size="sm" variant="primary" [hidden]="!competencia">
+        Confirmar Eliminación
+      </app-button>
+
+      <app-button [routerLink]="['/competencias']" size="sm" variant="outline">
+        Cancelar
+      </app-button>
+    </div>
+  </app-component-card>
+
+</div>

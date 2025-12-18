@@ -1,0 +1,25 @@
+<div class="flex flex-col gap-4">
+  <app-component-card title="Agregar entrenador">
+    <div class="space-y-6">
+      <div>
+        <app-label for="nombre">Nombre</app-label>
+        <app-input-field [value]="entrenador.nombre" (valueChange)="entrenador.nombre = $event.toString()" type="text" id="nombre" />
+      </div>
+      <div>
+        <app-label for="nacionalidad">Nacionalidad</app-label>
+        <app-input-field  [value]="entrenador.nacionalidad" (valueChange)="entrenador.nacionalidad = $event.toString()" type="text" id="nacionalidad" />
+      </div>
+      <div>
+        <app-label for="Experiencia">Experiencia</app-label>
+        <app-input-field [value]="entrenador.experiencia" (valueChange)="entrenador.experiencia = +$event" type="number" id="experiencia" />
+      </div>
+    </div>
+
+  </app-component-card>
+  <app-component-card title="Acciones">
+    <div class="flex items-center gap-5">
+      <app-button (click)="crearEntrenador()" size="sm" variant="primary"> Crear </app-button>
+      <app-button [routerLink]="['/entrenadores']"  size="sm" variant="outline"> Regresar </app-button>
+    </div>
+  </app-component-card>
+</div>

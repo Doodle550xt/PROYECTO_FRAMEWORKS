@@ -1,0 +1,33 @@
+<div class="flex flex-col gap-4">
+  <app-component-card title="Editar jugador">
+    <div class="space-y-6">
+      <div>
+        <app-label for="nombre">Nombre</app-label>
+        <app-input-field [disabled]="true" [value]="juagdor.nombre.toString()"
+          (valueChange)="juagdor.nombre = $event.toString()" type="text" id="nombre" />
+      </div>
+      <div>
+        <app-label for="posicion">Posición</app-label>
+        <app-input-field [disabled]="true" [value]="juagdor.posicion.toString()"
+          (valueChange)="juagdor.posicion = $event.toString()" type="text" id="posicion" />
+      </div>
+      <div>
+        <app-label for="numero">Numero</app-label>
+        <app-input-field [disabled]="true" [value]="juagdor.numero.toString()" (valueChange)="juagdor.numero = +$event"
+          type="text" id="numero" />
+      </div>
+      <div>
+        <app-label for="Experiencia">Equipo</app-label>
+        <app-input-field [disabled]="true" [value]="juagdor.equipo.nombre"
+          (valueChange)="juagdor.posicion = $event.toString()" type="text" id="posicion" />
+      </div>
+    </div>
+
+  </app-component-card>
+  <app-component-card title="Acciones">
+    <div class="flex items-center gap-5">
+      <app-button (click)="eliminarJugador()" size="sm" variant="primary"> Eliminar </app-button>
+      <app-button [routerLink]="['/equipos']" size="sm" variant="outline"> Regresar </app-button>
+    </div>
+  </app-component-card>
+</div>

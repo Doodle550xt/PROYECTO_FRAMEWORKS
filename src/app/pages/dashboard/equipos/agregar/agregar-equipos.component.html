@@ -1,0 +1,33 @@
+<div class="flex flex-col gap-4">
+  <app-component-card title="Agregar equipo">
+    <div class="space-y-6">
+      <div>
+        <app-label for="nombre">Nombre</app-label>
+        <app-input-field [value]="equipo.nombre.toString()" (valueChange)="equipo.nombre = $event.toString()"
+          type="text" id="nombre" />
+      </div>
+      <div>
+        <app-label for="ciudad">Ciudad</app-label>
+        <app-input-field [value]="equipo.ciudad.toString()" (valueChange)="equipo.ciudad = $event.toString()"
+          type="text" id="ciudad" />
+      </div>
+      <div>
+        <app-label for="Experiencia">Entrenador</app-label>
+        <app-select [options]="options" placeholder="Select Option" [value]="equipo.entrenador.id.toString()"
+          (valueChange)="handleSelectChange($event)" className="dark:bg-dark-900"></app-select>
+      </div>
+      <div>
+        <app-label for="Experiencia">Ligas</app-label>
+        <app-select [options]="optionsLigas" placeholder="Select Option" [value]="equipo.liga!.id.toString() || '0'"
+          (valueChange)="handleSelectChangeLigas($event)" className="dark:bg-dark-900"></app-select>
+      </div>
+    </div>
+
+  </app-component-card>
+  <app-component-card title="Acciones">
+    <div class="flex items-center gap-5">
+      <app-button (click)="crearEntrenador()" size="sm" variant="primary"> Crear </app-button>
+      <app-button [routerLink]="['/equipos']" size="sm" variant="outline"> Regresar </app-button>
+    </div>
+  </app-component-card>
+</div>

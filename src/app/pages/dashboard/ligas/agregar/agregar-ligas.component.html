@@ -1,0 +1,28 @@
+<div class="flex flex-col gap-4">
+  <app-component-card title="Agregar Ligua">
+    <div class="space-y-6">
+      <div>
+        <app-label for="nombre">Nombre</app-label>
+        <app-input-field [value]="liga.nombre.toString()" (valueChange)="liga.nombre = $event.toString()" type="text"
+          id="nombre" />
+      </div>
+      <div>
+        <app-label for="posicion">Pais</app-label>
+        <app-input-field [value]="liga.pais.toString()" (valueChange)="liga.pais = $event.toString()"
+          type="text" id="posicion" />
+      </div>
+      <div>
+        <app-label for="numero">Temporada</app-label>
+        <app-input-field [value]="liga.temporadaActual.toString()" (valueChange)="liga.temporadaActual = $event.toString()" type="text"
+          id="numero" />
+      </div>
+    </div>
+
+  </app-component-card>
+  <app-component-card title="Acciones">
+    <div class="flex items-center gap-5">
+      <app-button (click)="crearLiga()" size="sm" variant="primary"> Crear </app-button>
+      <app-button [routerLink]="['/ligas']" size="sm" variant="outline"> Regresar </app-button>
+    </div>
+  </app-component-card>
+</div>

@@ -1,0 +1,58 @@
+<div class="flex flex-col gap-4">
+
+  <app-component-card title="Editar competencia">
+    <div class="space-y-6">
+
+      <div>
+        <app-label for="equipoLocal">Equipo local</app-label>
+        <app-select [options]="opcionesEquipos" placeholder="Selecciona equipo local"
+          [value]="competencia.equipoLocal.id.toString()" (valueChange)="handleEquipoLocalChange($event)"
+          className="dark:bg-dark-900">
+        </app-select>
+      </div>
+
+      <div>
+        <app-label for="equipoVisitante">Equipo visitante</app-label>
+        <app-select [options]="opcionesEquipos" placeholder="Selecciona equipo visitante"
+          [value]="competencia.equipoVisitante.id.toString()" (valueChange)="handleEquipoVisitanteChange($event)"
+          className="dark:bg-dark-900">
+        </app-select>
+      </div>
+
+      <div>
+        <app-label for="fecha">Fecha del partido</app-label>
+        <app-input-field type="datetime-local" [value]="competencia.fecha"
+          (valueChange)="competencia.fecha = $event.toString()">
+        </app-input-field>
+      </div>
+
+      <div>
+        <app-label for="golesLocal">Goles local</app-label>
+        <app-input-field type="number" [value]="+competencia.golesLocal! || 0"
+          (valueChange)="competencia.golesLocal = +$event">
+        </app-input-field>
+      </div>
+
+      <div>
+        <app-label for="golesVisitante">Goles visitante</app-label>
+        <app-input-field type="number" [value]="competencia.golesVisitante! || 0"
+          (valueChange)="competencia.golesVisitante = +$event">
+        </app-input-field>
+      </div>
+
+    </div>
+  </app-component-card>
+
+  <app-component-card title="Acciones">
+    <div class="flex items-center gap-5">
+      <app-button (click)="actualizarCompetencia()" size="sm" variant="primary">
+        Actualizar
+      </app-button>
+
+      <app-button [routerLink]="['/competencias']" size="sm" variant="outline">
+        Regresar
+      </app-button>
+    </div>
+  </app-component-card>
+
+</div>
